@@ -1,0 +1,61 @@
+#container {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	width: 20vw;
+	height: 60vh;
+	border: 3px solid black;
+}
+
+.resultRow {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 19%;
+	border-radius: 5px;
+	font-size: 250%;
+	border-radius: 5px;
+	padding: 0 20px;
+	border: 1px solid black;
+}
+
+.outputRow {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 16%;
+	border-radius: 5px;
+	font-size: 230%;
+	border-radius: 5px;
+	padding: 0 20px;
+	border: 1px solid black;
+}
+
+.row {
+	display: flex;
+	width: 100%;
+	height: 13%;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25%;
+	height: 100%;
+	font-size: 200%;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+.numberBlock {
+	background: #ff9999;
+}
+
+.operators {
+	background: #ffffcc;
+}

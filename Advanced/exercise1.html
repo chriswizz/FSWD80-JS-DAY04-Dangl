@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced | Calculator</title>
+	<link rel="stylesheet" href="exercise1.css">
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div id="container" class="row">
+
+		<div id="resultField" class="resultRow">
+				
+		</div>
+
+		<div id="outputField" class="outputRow">
+
+		</div>
+
+		<div id="firstRow" class="row">
+			<div class="button operators" id="buttonSquareroot">
+				<span>&#8730;</span>
+			</div>
+			<div class="button operators" id="buttonBraceOpen">
+				<span>(</span>
+			</div>
+			<div class="button operators" id="buttonBraceClose">
+				<span>)</span>
+			</div>
+			<div class="button operators" id="buttonClear">
+				<span>C</span>
+			</div>
+		</div>
+
+		<div id="secondRow" class="row">
+			<div class="button numberBlock" id="button7">
+				<span>7</span>
+			</div>
+			<div class="button numberBlock" id="button8">
+				<span>8</span>
+			</div>
+			<div class="button numberBlock" id="button9">
+				<span>9</span>
+			</div>
+			<div class="button operators" id="buttonDivide">
+				<span>/</span>
+			</div>
+		</div>
+
+		<div id="thirdRow" class="row">
+			<div class="button numberBlock" id="button4">
+				<span>4</span>
+			</div>
+			<div class="button numberBlock" id="button5">
+				<span>5</span>
+			</div>
+			<div class="button numberBlock" id="button6">
+				<span>6</span>
+			</div>
+			<div class="button operators" id="buttonMultiply">
+				<span>*</span>
+			</div>
+		</div>
+
+		<div id="fourthRow" class="row">
+			<div class="button numberBlock" id="button1">
+				<span>1</span>
+			</div>
+			<div class="button numberBlock" id="button2">
+				<span>2</span>
+			</div>
+			<div class="button numberBlock" id="button3">
+				<span>3</span>
+			</div>
+			<div class="button operators" id="buttonSubtract">
+				<span>-</span>
+			</div>
+		</div>
+
+		<div id="fifthRow" class="row">
+			<div class="button numberBlock" id="buttonDecimalPoint">
+				<span>.</span>
+			</div>
+			<div class="button numberBlock" id="button0">
+				<span>0</span>
+			</div>
+			<div class="button numberBlock" id="buttonEquals">
+				<span>=</span>
+			</div>
+			<div class="button operators" id="buttonAdd">
+				<span>+</span>
+			</div>
+		</div>
+
+	</div>
+
+	<script charset="utf-8">
+		var outputString = "";
+		var result = 0
+
+		function addSquareroot() {
+			outputString += "\u221A(";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addBraceOpen() {
+			outputString += "(";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addBraceClose() {
+			outputString += ")";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addDivide() {
+			outputString += "/";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addMultiply() {
+			outputString += "*";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addSubtract() {
+			outputString += "-";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addAdd() {
+			outputString += "+";
+			document.getElementById("outputField").textContent = outputString;
+		}
+		function addDecimalPoint() {
+			outputString += ".";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add1() {
+			outputString += "1";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add2() {
+			outputString += "2";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add3() {
+			outputString += "3";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add4() {
+			outputString += "4";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add5() {
+			outputString += "5";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add6() {
+			outputString += "6";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add7() {
+			outputString += "7";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add8() {
+			outputString += "8";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add9() {
+			outputString += "9";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function add0() {
+			outputString += "0";
+			document.getElementById("outputField").textContent = outputString;
+		}
+
+		function addClear() {
+			location.reload();
+		}
+
+		function addEquals() {
+			result = eval(outputString.replace(/\u221A/g, "Math.sqrt"));
+			document.getElementById("resultField").textContent = result;
+		}
+
+		document.getElementById("buttonSquareroot").addEventListener("click", addSquareroot);
+		document.getElementById("buttonBraceOpen").addEventListener("click", addBraceOpen);
+		document.getElementById("buttonBraceClose").addEventListener("click", addBraceClose);
+		document.getElementById("buttonDivide").addEventListener("click", addDivide);
+		document.getElementById("buttonMultiply").addEventListener("click", addMultiply);
+		document.getElementById("buttonSubtract").addEventListener("click", addSubtract);
+		document.getElementById("buttonAdd").addEventListener("click", addAdd);
+		document.getElementById("buttonDecimalPoint").addEventListener("click", addDecimalPoint);
+		document.getElementById("button1").addEventListener("click", add1);
+		document.getElementById("button2").addEventListener("click", add2);
+		document.getElementById("button3").addEventListener("click", add3);
+		document.getElementById("button4").addEventListener("click", add4);
+		document.getElementById("button5").addEventListener("click", add5);
+		document.getElementById("button6").addEventListener("click", add6);
+		document.getElementById("button7").addEventListener("click", add7);
+		document.getElementById("button8").addEventListener("click", add8);
+		document.getElementById("button9").addEventListener("click", add9);
+		document.getElementById("button0").addEventListener("click", add0);
+		document.getElementById("buttonClear").addEventListener("click", addClear);
+		document.getElementById("buttonEquals").addEventListener("click", addEquals);
+
+	</script>
+
+</body>
+</html>

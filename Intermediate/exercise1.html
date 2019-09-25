@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Intermediate exercise 1 | Hotels</title>
+	<link rel="stylesheet" href="exercise1.css">
+</head>
+<body id="body">
+
+	<div class="container">
+
+		<div class="wrapper" id="hotelSelection">
+		
+			<h2>Select a hotel for your stay in Vienna:</h2>
+
+			<form id="formRadioButtons">
+				<div id="radioButtons">
+					<input type="radio" name="hotel" id="checkHotel_1"><span id="hotel_1"></span><br>
+				</div>
+				<div id="radioButtons">
+					<input type="radio" name="hotel" id="checkHotel_2"><span id="hotel_2"></span><br>
+				</div>
+				<div id="radioButtons">
+					<input type="radio" name="hotel" id="checkHotel_3"><span id="hotel_3"></span><br>
+				</div>
+
+			</form>
+
+		</div>
+
+		<div class="wrapper">
+
+			<h2>Choose the number of nights you want to stay (from 1 to 10):</h2>
+
+			<form>
+				<input type="number" name="numberNights" min="1" max="10" value="1" id="numberNightsSelection">
+			</form>
+
+		</div>
+
+		<div class="wrapper">
+
+			<form id="formSubmit">
+				<input onclick="return calculatePossibility()" type="submit" id="submitButton">
+				<button type="button" id="reserveButton">I'll reserve</button>
+			</form>
+
+			<p id="sorry"></p>
+
+		</div>
+
+	</div>
+
+	<script>
+
+		//calculate random numbers from 1 to 10 for each hotel
+		var available_nights_1 = Math.ceil(Math.random() * 10);
+		var available_nights_2 = Math.ceil(Math.random() * 10);
+		var available_nights_3 = Math.ceil(Math.random() * 10);
+
+		console.log("Hotel 1: " + available_nights_1);
+		console.log("Hotel 2: " + available_nights_2);
+		console.log("Hotel 3: " + available_nights_3);
+
+
+
+		//create hotel ojects
+		function HotelConstructor(name, available_nights) {
+			this.name = name;
+			this.available_nights = available_nights;
+		}
+
+		var hotel_1 = new HotelConstructor("Motel One Wien-Staatsoper", available_nights_1);
+		var hotel_2 = new HotelConstructor("Hotel Rathaus - Wein & Design", available_nights_2);
+		var hotel_3 = new HotelConstructor("Steigenberger Hotel Herrenhof", available_nights_3);
+
+
+
+		//text content for radio buttons
+		document.getElementById("hotel_1").textContent = hotel_1.name;
+		document.getElementById("hotel_2").textContent = hotel_2.name;
+		document.getElementById("hotel_3").textContent = hotel_3.name;
+
+
+
+		//event listener submit does not work --> onclick event instead :(
+		function calculatePossibility() {
+
+			//create sorry message
+			var selectedNights = document.getElementById("numberNightsSelection").value;
+			var sorryMessage = "Sorry, no free room for " + selectedNights + " nights.";
+			document.getElementById("sorry").textContent = sorryMessage;
+
+			//check radio buttons does not work --> always first button checked
+			switch (true) {
+				case document.getElementById("checkHotel_1").checked = true:
+					var availableNightsSelection = hotel_1.available_nights;
+					break;
+				case document.getElementById("checkHotel_2").checked = true:
+					var availableNightsSelection = hotel_2.available_nights;
+					break;
+				case document.getElementById("checkHotel_3").checked = true:
+					var availableNightsSelection = hotel_3.available_nights;
+					break;
+			}
+
+			if (availableNightsSelection < selectedNights) {
+				document.getElementById("submitButton").style.display = "none";
+				document.getElementById("sorry").style.display = "flex";
+			} else {
+				document.getElementById("submitButton").style.display = "none";
+				document.getElementById("reserveButton").style.display = "flex";				
+			}
+
+		return false;
+
+		}
+
+		// event listener does not work: changed style changes back immediately
+
+		// document.getElementById("formSubmit").addEventListener("submit", calculatePossibility);
+
+	</script>
+
+</body>
+</html>

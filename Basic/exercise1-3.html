@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic exercises</title>
+</head>
+<body>
+	<script>
+		document.write("<h2>Basic exercise 1 | Age</h2>");
+		document.write("<h3>" + calculateAge(1982) + "</h3><hr>");
+
+		document.write("<h2>Basic exercise 2 | Truncate<h2>");
+		document.write("<h3>" + truncateString("I am a hero from World of Warcraft", 12) + "</h3><hr>");
+
+		document.write("<h2>Basic exercise 3 | Personal information</h2>");
+		document.write("<h3>" + displayPersonalInfo("Christian", "Dangl", 37, "future programmer") + "</h3><hr>");
+
+
+		function calculateAge(birth_year) {
+			var current_year = new Date();
+			current_year = current_year.getFullYear();
+			var ageCeil = current_year - birth_year;
+			var ageFloor = ageCeil - 1;
+			return("You are either " + ageCeil + " or " + ageFloor);
+		}
+
+		function truncateString(string, number) {
+			return(string.substring(0, number));
+		}
+
+		function displayPersonalInfo(first_name, second_name, age, job_title) {
+			return("Hi, my name is " + first_name + " " + second_name + ". I am " + age + " years old and I am a " + job_title + ".");
+		}
+
+	</script>
+
+</body>
+</html>

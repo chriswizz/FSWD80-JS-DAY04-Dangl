@@ -1,0 +1,58 @@
+#body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 30vw;
+	height: 40vh;
+	border-radius: 40px;
+	padding: 5%;
+	background-color: #003580;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 60%;
+	margin: 3%;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #E9F0FA;
+}
+
+#formRadioButtons{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: auto;
+	background-color: #FFFFFF;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+#reserveButton {
+	font-weight: bold;
+}
+
+#submitButton {
+	display: flex;
+}
+
+#reserveButton {
+	display: none;
+}
+
+#sorry {
+	display: none;
+	font-weight: bold;
+}
